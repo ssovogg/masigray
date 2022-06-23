@@ -1,5 +1,32 @@
 // html, css, js 로딩완료
-$(document).ready();
+$(document).ready(function(){
+  // 메인메뉴 기능
+  let header = $('.header');
+  let headerTop = $('.header-top');
+  let headerMain = $('.header-main');
+  let gnb = $('.gnb');
+
+  gnb.mouseenter(function(){
+    headerMain.addClass('header-main-show');
+  });
+  gnb.mouseleave(function(){
+    headerMain.removeClass('header-main-show');
+  });
+
+  // 스크롤시 기능
+  $(window).scroll(function(){
+    // 스크롤바의 위치를 파악한다. (몇픽셀 내려와있는지)
+    let temp = $(window).scrollTop(); 
+    // .header-top 숨기기
+    if(temp > 0){
+      header.addClass('header-fix');
+      headerTop.addClass('header-top-close');
+    } else{
+      header.removeClass('header-fix');
+      headerTop.removeClass('header-top-close');
+    }
+  });
+});
 
 // html, css, js ~ 멀티미디어까지 로딩완료
 window.onload = function() {

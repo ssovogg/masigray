@@ -3,11 +3,19 @@
 
 <head>
   <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>마시그래이</title>
   <!-- jQuery cdn -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <!-- swiper -->
   <link rel="stylesheet" href="js/swiper/swiper.min.css">
   <script src="js/swiper/swiper.min.js"></script>
@@ -17,22 +25,96 @@
 </head>
 
 <body>
+
+  <!-- 우측 고정메뉴 -->
+  <div class="fix-menu">
+    <a href="#"><img src="images/fix_1.png" alt="케이터링"></a>
+    <a href="#"><img src="images/fix_2.png" alt="창업안내"></a>
+    <a href="#"><img src="images/fix_3.png" alt="전화상담"></a>
+    <a href="#"><img src="images/fix_4.png" alt="고객상담"></a>
+  </div>
+
   <!-- 전체 레이아웃 -->
   <div class="wrap">
+
     <!-- header -->
     <header class="header">
       <div class="inner">
-        <a href="index.html" class="logo">마시그래이</a>
-        <div class="gnb"></div>
-        <div class="h-sns">
+
+        <!-- header-top -->
+        <div class="header-top clearfix">
           <ul class="h-sns-list">
             <li><a href="#" class="icon-bg">blog</a></li>
             <li><a href="#" class="icon-is">instagram</a></li>
             <li><a href="#" class="icon-fb">facebook</a></li>
           </ul>
         </div>
+
+        <!-- header-main -->
+        <div class="header-main clearfix">
+          <a href="index.html" class="logo">마시그래이</a>
+          <!-- gnb -->
+          <div class="gnb">
+            <ul class="menu clearfix">
+              <li>
+                <a href="#">마시그래이</a>
+                <ul class="submenu">
+                  <li><a href="#">회사소개</a></li>
+                  <li><a href="#">연혁</a></li>
+                  <li><a href="#">CEO인사말</a></li>
+                  <li><a href="#">BI / 비전</a></li>
+                  <li><a href="#">오시는길</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">메뉴</a>
+                <ul class="submenu">
+                  <li><a href="#">신메뉴</a></li>
+                  <li><a href="#">커피</a></li>
+                  <li><a href="#">음료</a></li>
+                  <li><a href="#">디저트</a></li>
+                  <li><a href="#">MD상품</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">프랜차이즈</a>
+                <ul class="submenu">
+                  <li><a href="#">가맹안내</a></li>
+                  <li><a href="#">가맹절차</a></li>
+                  <li><a href="#">매장인테리어</a></li>
+                  <li><a href="#">커피 아카데미</a></li>
+                  <li><a href="#">가맹상담신청</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">매장안내</a>
+                <ul class="submenu">
+                  <li><a href="#">매장안내</a></li>
+                  <li><a href="#">가까운 매장찾기</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">공지사항</a>
+                <ul class="submenu">
+                  <li><a href="#">공지사항</a></li>
+                  <li><a href="#">이벤트</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">고객의 소리</a>
+                <ul class="submenu">
+                  <li><a href="#">FAQ</a></li>
+                  <li><a href="#">Q&A</a></li>
+                  <li><a href="#">케이터링</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </header>
+
     <!-- visual -->
     <section class="visual">
       <div class="swiper-container sw-visual">
@@ -56,9 +138,11 @@
         <button class="sw-visual-next"></button>
       </div>
     </section>
+
     <!-- items -->
     <section class="items">
       <div class="inner clearfix">
+        <!-- items 01 : 브랜드 스토리 -->
         <div class="items-box">
           <img src="images/mb01_img.png" alt="마시그래이">
           <span class="bar"></span>
@@ -71,6 +155,8 @@
             </p>
           </a>
         </div>
+
+        <!-- items 02 : 슬라이드 메뉴 -->
         <div class="items-box">
           <!-- item 슬라이드 -->
           <div class="swiper-container sw-items">
@@ -102,6 +188,8 @@
             </div>
           </div>
         </div>
+
+        <!-- items 03 : 창업 문의 -->
         <div class="items-box">
           <a href="#">
             <h3>창업절차</h3>
@@ -118,12 +206,14 @@
             </p>
           </a>
         </div>
+
+        <!-- items 04 : 매장 검색 -->
         <div class="items-box clearfix">
           <div class="search-left"></div>
           <div class="search">
             <h3><b>STORE</b>매장</h3>
             <p>
-              가까운 마시그래이 매장을 
+              가까운 마시그래이 매장을
               찾아보세요
             </p>
             <form action="" class="search-form">
@@ -135,6 +225,7 @@
         </div>
       </div>
     </section>
+
     <!-- bevarage -->
     <section class="bevarage">
       <div class="inner">
@@ -171,6 +262,7 @@
         </div>
       </div>
     </section>
+
     <!-- franchiser -->
     <section class="franchiser">
       <div class="inner">
@@ -186,6 +278,7 @@
         </ul>
       </div>
     </section>
+
     <!-- sns -->
     <section class="sns">
       <div class="inner">
@@ -193,8 +286,10 @@
         <p>#masigray</p>
       </div>
     </section>
+
     <!-- footer -->
     <footer class="footer">
+      <!-- footer gnb -->
       <div class="footer-gnb">
         <div class="inner">
           <ul class="footer-menu clearfix">
@@ -207,12 +302,13 @@
           </ul>
         </div>
       </div>
+      <!-- footer info -->
       <div class="footer-info">
         <div class="inner">
           <img src="images/foot_logo.png" alt="마시그래이" class="footer-logo">
-          <div class="footer-address">
-            <p>(주) 에스이엠 | 사업자등록번호 : 502 - 86 - 32017 | 대표이사 : 정영주</p>
-            <p>주소 : 대구광역시 수성구 만촌동 957-2번지 2층 | 전화 : 1899-2087 | 팩스 : 053-474-9522</p>
+          <div class="footer-copy">
+            <p>(주) 에스이엠 <span>|</span> 사업자등록번호 : 502 - 86 - 32017 <span>|</span> 대표이사 : 정영주</p>
+            <p>주소 : 대구광역시 수성구 만촌동 957-2번지 2층 <span>|</span> 전화 : 1899-2087 <span>|</span> 팩스 : 053-474-9522</p>
           </div>
           <ul class="footer-sns">
             <li><a href="#"><img src="images/footer_blog.png" alt="블로그"></a></li>
