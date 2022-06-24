@@ -56,6 +56,219 @@ body {
   clear: both;
 }
 
+
+/* ========== 위로 가기 ========== */
+.gotop {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  display: block;
+  width: 50px;
+  height: 50px;
+  border: 0;
+  background: url('../images/gotop.png') no-repeat center;
+  background-size: contain;
+  z-index: 999;
+  cursor: pointer;
+}
+
+/* ========== 모바일 메뉴 ========== */
+.mb-bt {
+  position: fixed;
+  left: 20px;
+  top: 22px;
+  display: none;
+  width: 22px;
+  height: 18px;
+  border: 0;
+  background: #fff;
+  cursor: pointer;
+  z-index: 99997;
+}
+
+.mb-bt::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #51504e;
+  /* transform: rotate(45deg) translate(5px, 6px); */
+}
+
+.mb-bt span {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #51504e;
+}
+
+.mb-bt::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #51504e;
+  /* transform: rotate(-45deg) translate(5px, -6px); */
+}
+
+/* ========== 모바일 메뉴내용 ========== */
+.mb-wrap {
+  position: fixed;
+  left: -320px;
+  top: 0;
+  display: block;
+  width: 320px;
+  height: 100vh;
+  background: #fff;
+  transition: left .5s;
+  z-index: 99999;
+}
+
+.mb-wrap-open {
+  left: 0;
+}
+
+/* mb-sns */
+.mb-close {
+  position: absolute;
+  left: 20px;
+  top: 22px;
+  display: block;
+  width: 22px;
+  height: 18px;
+  background: url('../images/mb_close.png') no-repeat center;
+  background-size: contain;
+  border: 0;
+  cursor: pointer;
+}
+
+.mb-sns {
+  position: relative;
+  display: block;
+  height: 66px;
+  padding-top: 20px;
+  padding-right: 17px;
+}
+
+.mb-sns-list {
+  position: relative;
+  display: block;
+  float: right;
+}
+
+.mb-sns-list li {
+  position: relative;
+  display: block;
+  float: left;
+  padding-left: 8px;
+}
+
+.mb-sns-list li a {
+  position: relative;
+  display: block;
+}
+
+/* mb-menu */
+.mb-menu {
+  position: relative;
+  display: block;
+}
+
+.mb-menu>li {
+  position: relative;
+  display: block;
+  border-bottom: 1px solid #eee;
+}
+
+.mb-menu>li>a {
+  position: relative;
+  display: block;
+  font-size: 16px;
+  color: #222;
+  font-weight: 500;
+  letter-spacing: .5px;
+  padding: 10px 20px;
+}
+
+.mb-menu>li>a:after {
+  content: '';
+  position: absolute;
+  display: block;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  width: 13px;
+  height: 9px;
+  background: url('../images/mb_submenu.png') no-repeat center;
+  transition: transform .5s;
+}
+
+.mb-icon-rot::after {
+  transform: translateY(-50%) rotate(180deg) !important;
+}
+
+/* 포커스 유지 */
+.mb-menu-focus {
+  color: #4abbc3 !important;
+}
+/* .mb-menu>li:hover>a {
+  color: #4abbc3;
+}
+
+.mb-menu>li:hover .mb-submenu {
+  display: block;
+} */
+
+.mb-submenu {
+  position: relative;
+  display: none;
+  background: #f2f2f2;
+  padding: 8px 0;
+}
+
+.mb-submenu li {
+  position: relative;
+  display: block;
+}
+
+.mb-submenu li a {
+  position: relative;
+  display: block;
+  font-size: 13px;
+  color: #888;
+  padding: 8px 18px;
+}
+
+.mb-submenu li a:hover {
+  color: #4abbc3;
+}
+
+
+
+/* ========== 모바일 가림막 ========== */
+.mb-dim {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, .7);
+  z-index: 99998;
+}
+
+
 /* ========== 우측 고정메뉴 ========== */
 .fix-menu {
   position: fixed;
@@ -89,7 +302,7 @@ body {
   position: relative;
   display: block;
   z-index: 9999;
-  border-bottom: 1px solid rgba(0,0,0,.1);
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
 
 .header-fix {
@@ -113,6 +326,7 @@ body {
 .header-top-close {
   display: none;
 }
+
 .h-sns-list {
   position: relative;
   display: block;
@@ -165,6 +379,7 @@ body {
   overflow: hidden;
   transition: height .5s;
 }
+
 .header-main-show {
   height: 270px;
 }
@@ -196,7 +411,7 @@ body {
   text-align: center;
 }
 
-.menu > li {
+.menu>li {
   position: relative;
   display: inline-block;
   vertical-align: top;
@@ -204,15 +419,15 @@ body {
   transition: padding .2s;
 }
 
-.menu > li:last-child {
+.menu>li:last-child {
   padding-right: 0;
 }
 
-.menu > li:hover > a {
+.menu>li:hover>a {
   color: #69ccd0;
 }
 
-.menu > li > a {
+.menu>li>a {
   position: relative;
   display: block;
   font-size: 18px;
@@ -220,10 +435,12 @@ body {
   line-height: 51px;
   transition: color .2s;
 }
-.menu > li:last-child a {
+
+.menu>li:last-child a {
   margin-right: 0;
 }
-.menu > li:hover .submenu {
+
+.menu>li:hover .submenu {
   /* height: 100%; */
 }
 
@@ -246,6 +463,7 @@ body {
   line-height: 32px;
   color: #999;
 }
+
 .submenu li a:hover {
   color: #222;
 }
@@ -253,31 +471,37 @@ body {
 
 /* header PC ver */
 /* header 반응형 ver */
-@media all and (max-width: 1080px){
-  .menu > li > a {
+@media all and (max-width: 1080px) {
+  .menu>li>a {
     font-size: 17px;
   }
-  .menu > li {
+
+  .menu>li {
     padding: 0 25px;
   }
 }
-@media all and (max-width: 960px){
+
+@media all and (max-width: 960px) {
   .logo {
     width: 160px;
   }
-  .menu > li > a {
+
+  .menu>li>a {
     font-size: 16px;
   }
-  .menu > li {
+
+  .menu>li {
     padding: 0 15px;
   }
 }
-@media all and (max-width: 750px){
+
+@media all and (max-width: 750px) {
   .logo {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
   }
+
   .header-top,
   .gnb {
     display: none;
@@ -287,6 +511,11 @@ body {
     padding: 8px;
     height: 64px;
   }
+
+  .mb-bt {
+    display: block;
+  }
+
 }
 
 /* ========== visual ========== */
@@ -370,6 +599,7 @@ body {
 }
 
 @media all and (max-width:1000px) {
+
   .sw-visual-prev,
   .sw-visual-next {
     width: 5.5vw;
@@ -745,6 +975,7 @@ body {
   .items-box:nth-child(1) img {
     margin: 80px 0 25px;
   }
+
   .items-box:nth-child(1) a p,
   .items-box:nth-child(3) a p,
   .search p {
@@ -1035,7 +1266,7 @@ body {
 .footer {
   position: relative;
   display: block;
-  background: #212121;
+  background: #262626;
   padding: 20px 0;
   text-align: center;
 }
@@ -1132,9 +1363,11 @@ body {
   .footer-menu li {
     padding: 0 4vw 2vw;
   }
+
   .footer-menu li a {
     font-size: 12px;
   }
+
   .footer-copy {
     font-size: 11px;
   }
